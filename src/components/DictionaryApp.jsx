@@ -1,7 +1,9 @@
 import React from "react";
 
 const DictionaryApp = () => {
-  return <div>DictionaryApp</div>;
+  return <div>
+    
+  </div>;
 };
 
 export default DictionaryApp;
