@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
-//play button
-import { BsPlayCircleFill } from "react-icons/bs";
+import Word from "./Word";
 
 // API
 const API = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
@@ -18,7 +16,6 @@ const Definition = () => {
     try {
       const response = await axios.get(`${API}${value}`);
       setData(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -32,16 +29,20 @@ const Definition = () => {
 
   return (
     <div>
-      <h1>{word}</h1>
-      {data.map((item, index) => {
-        const { phonetic, phonetics } = item;
-        return (
-          <div key={index}>
-            <p>{phonetic}</p>
-            <p>{phonetics.map((sound) => sound.audio !== "" && sound.audio)}</p>
-          </div>
-        );
-      })}
+      <Word
+        word={data.map((item) => item.word)[0]}
+        phonetic={data.map((item) => item.phonetic)[0]}
+        audio={
+          data
+            .filter((item) => item.phonetics.length)
+            .map(
+              (item) =>
+                item.phonetics
+                  .map((item) => item.audio)
+                  .filter((item) => item !== "")[0]
+            )[0]
+        }
+      />
     </div>
   );
 };
