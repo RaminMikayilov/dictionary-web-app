@@ -18,13 +18,15 @@ const Word = ({ word, phonetic, audio }) => {
       </div>
 
       <div>
-        <img
-          src={playIcon}
-          alt="play-icon"
-          url={audio}
-          onClick={playAudio}
-          className="h-10 cursor-pointer"
-        />
+        {audio && (
+          <img
+            src={playIcon}
+            alt="play-icon"
+            url={audio}
+            onClick={playAudio}
+            className="h-10 cursor-pointer"
+          />
+        )}
       </div>
     </div>
   );
