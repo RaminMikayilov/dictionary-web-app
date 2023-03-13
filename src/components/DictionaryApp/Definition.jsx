@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Word from "./Word";
 import Meanings from "./Meanings";
+import Loading from "./Loading";
 
 // API
 const API = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
@@ -14,12 +15,17 @@ const Definition = () => {
   const { word } = useDictionaryContext();
   const [data, setData] = useState([]);
 
+  const [loading, setLoading] = useState(false);
+
   const getData = async (value) => {
+    setLoading(true);
     try {
       const response = await axios.get(`${API}${value}`);
       setData(response.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -28,6 +34,10 @@ const Definition = () => {
       getData(word);
     }
   }, [word]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="dark:text-custom-white">
