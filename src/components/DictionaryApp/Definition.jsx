@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Word from "./Word";
+import Meanings from "./Meanings";
 
 // API
 const API = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
@@ -43,6 +44,17 @@ const Definition = () => {
             )[0]
         }
       />
+      {data.map((item) =>
+        item.meanings.map((item, index) => (
+          <Meanings
+            key={index}
+            partOfSpeech={item.partOfSpeech}
+            definitions={item.definitions}
+            synonyms={item.synonyms}
+            antonyms={item.antonyms}
+          />
+        ))
+      )}{" "}
     </div>
   );
 };
