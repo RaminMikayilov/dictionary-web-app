@@ -25,7 +25,7 @@ const Meanings = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
 
       {/* Synonyms */}
       {synonyms.length !== 0 && (
-        <div className="flex flex-wrap space-y-3 items-center">
+        <div className="flex flex-wrap space-y-3 items-center text-custom-gray">
           <h3>Synonyms : </h3>
 
           {synonyms.map((item, index) => (
@@ -41,7 +41,7 @@ const Meanings = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
 
       {/* Antonyms */}
       {antonyms.length !== 0 && (
-        <div className="flex flex-wrap space-y-3 items-center">
+        <div className="flex flex-wrap space-y-3 items-center text-custom-gray">
           <h3>Antonyms : </h3>
           {antonyms.map((item, index) => (
             <span

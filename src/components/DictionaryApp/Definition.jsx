@@ -30,7 +30,7 @@ const Definition = () => {
   }, [word]);
 
   return (
-    <div>
+    <div className="dark:text-custom-white">
       <Word
         word={data.map((item) => item.word)[0]}
         phonetic={data.map((item) => item.phonetic)[0]}
