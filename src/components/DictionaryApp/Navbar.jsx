@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // icons
 import { BiBook } from "react-icons/bi";
@@ -7,11 +7,10 @@ import { MdOutlineLightMode } from "react-icons/md";
 
 //context
 import useFontContext from "../../hooks/useFontContext";
-import useThemeContext from "../../hooks/useThemeContext";
 
 const Navbar = () => {
   const { setFont } = useFontContext();
-  const { theme, setTheme } = useThemeContext();
+  const [theme, setTheme] = useState("");
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
