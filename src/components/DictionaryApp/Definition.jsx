@@ -8,6 +8,7 @@ const API = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
 
 //context
 import useDictionaryContext from "../../hooks/useDictionaryContext";
+import Source from "./Source";
 
 const Definition = () => {
   const { word } = useDictionaryContext();
@@ -54,7 +55,9 @@ const Definition = () => {
             antonyms={item.antonyms}
           />
         ))
-      )}{" "}
+      )}
+
+      <Source url={data.map((item) => item.sourceUrls)[0]} />
     </div>
   );
 };
