@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Word from "./Word";
 import Meanings from "./Meanings";
 import Loading from "./Loading";
+import Error from "./Error";
 
 // API
 const API = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
@@ -16,14 +17,16 @@ const Definition = () => {
   const [data, setData] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const getData = async (value) => {
     setLoading(true);
     try {
       const response = await axios.get(`${API}${value}`);
       setData(response.data);
+      setError(false);
     } catch (error) {
-      console.log(error);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -37,6 +40,8 @@ const Definition = () => {
 
   if (loading) {
     return <Loading />;
+  } else if (error) {
+    return <Error />;
   }
 
   return (
