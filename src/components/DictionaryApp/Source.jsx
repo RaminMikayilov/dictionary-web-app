@@ -7,11 +7,11 @@ const Source = ({ url }) => {
   return (
     <>
       {url && (
-        <div className="flex items-center space-x-1 border-t-2 border-custom-gray py-5">
+        <div className="flex items-center space-x-1 border-t-2 border-custom-gray py-5 max-[365px]:flex-col">
           <h2>Source : </h2>
           <a
             href={url}
-            className="underline text-custom-gray px-1 flex items-center"
+            className="underline text-custom-gray px-1 space-x-1 flex items-center"
           >
             <span>{url[0]}</span>
             <FiExternalLink />
