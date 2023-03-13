@@ -14,6 +14,7 @@ const Searchbar = () => {
     e.preventDefault();
     if (inputValue.trim() == "") return;
     setWord(inputValue);
+    setInputValue("");
   };
 
   return (
