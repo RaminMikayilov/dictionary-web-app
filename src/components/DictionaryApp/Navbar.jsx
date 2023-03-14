@@ -22,9 +22,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+      document.querySelector(".class_dark_mode").classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.querySelector(".class_dark_mode").classList.remove("dark");
     }
   }, [theme]);
 

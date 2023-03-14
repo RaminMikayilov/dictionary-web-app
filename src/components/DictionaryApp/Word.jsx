@@ -13,7 +13,7 @@ const Word = ({ word, phonetic, audio }) => {
   return (
     <div className="flex justify-between items-center p-2">
       <div>
-        <h1 className="text-3xl font-bold">{word}</h1>
+        <h1 className="text-4xl">{word}</h1>
         <p className="text-blue-600 text-md">{phonetic}</p>
       </div>
 
