@@ -31,7 +31,7 @@ const Meanings = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
           {synonyms.map((item, index) => (
             <span
               key={index}
-              className="bg-custom-blue text-white text-xs font-medium px-3 py-1 rounded-full mx-1"
+              className="bg-custom-blue text-white text-xs font-medium px-3 py-1 rounded-full m-1"
             >
               {item}
             </span>
@@ -46,7 +46,7 @@ const Meanings = ({ partOfSpeech, definitions, synonyms, antonyms }) => {
           {antonyms.map((item, index) => (
             <span
               key={index}
-              className="bg-custom-blue text-white text-xs font-medium px-3 py-1 rounded-full mx-1"
+              className="bg-custom-blue text-white text-xs font-medium px-3 py-1 rounded-full m-1"
             >
               {item}
             </span>
