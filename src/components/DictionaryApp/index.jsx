@@ -15,7 +15,7 @@ const DictionaryApp = () => {
     <DictionaryContextProvider>
       <div className="class_dark_mode">
         <div
-          className={`bg-slate-100 min-h-screen dark:bg-gray-800 font-${font}`}
+          className={`bg-slate-100 min-h-screen dark:bg-gray-800 ${font}`}
         >
           <div className="w-full md:w-2/3 xl:w-1/2 mx-auto px-5">
             <Navbar />

@@ -1,3 +1,24 @@
+/* serif */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,600&display=swap");
+
+/* mono */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.serif {
+  font-family: "Noto Serif", serif;
+}
+
+.sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.mono {
+  font-family: "Space Mono", monospace;
+}
