@@ -2,6 +2,8 @@
 
 This is a simple React-based web app that allows users to search for the definition of words. It uses the [Dictionary API](https://dictionaryapi.dev/) to retrieve the definitions.
 
+![Screenshot](./src/assets/images/screenshot.png)
+
 ## Installation
 
 To get started with this project, follow these steps:
